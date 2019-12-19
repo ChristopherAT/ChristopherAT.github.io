@@ -7,14 +7,19 @@
   <title>Selamat Natal 2019</title>
   <meta name="description" content="Selamat Natal 2019" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Icons and Font -->
+  <link rel="icon" href="img/icon.png" sizes="32x32">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mountains+of+Christmas" />
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/materialize.css">
   <link rel="stylesheet" href="css/clockdiv.css">
   <!-- <link rel="stylesheet" href="css/xmas-tree.css"> -->
   <!-- <link rel="stylesheet" href="css/snow-dzendzen.css"> -->
-  <!-- <script src="js/jquery-3.4.1.min.js"></script> -->
   <!-- <link rel="stylesheet" href="css/snow.css"> -->
+  <!-- <script src="js/jquery-3.4.1.min.js"></script> -->
 
   <style>
     .sky {
@@ -62,18 +67,26 @@
 </head>
 
 <body>
+  <!-- Musik -->
+  <!-- <embed src="bgm/jingle-bells-keyboard.mid" autostart="true"> -->
+  <audio autoplay loop>
+    <source src="bgm/">
+  </audio>
+
+
   <nav>
     <div class="nav-wrapper">
-      <a href="#!" data-target="slide-out" class="brand-logo sidenav-trigger">
-        <!-- <i class="material-icons">settings</i> -->
-        LOGO
-      </a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
+      <!-- <a href="#!" data-target="slide-out" class="brand-logo"> -->
+      <!-- <i class="material-icons">settings</i> -->
+      <!-- LOGO -->
+      <!-- </a> -->
+      <ul id="nav-mobile" class="right show-on-med-and-down">
         <!-- <li>
             <a href="#settings" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">settings</i></a>
         </li> -->
-        <!-- <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="share.html">Kirim</a></li> -->
+        <li class="active"><a href="index.html">Selamat Natal 2019</a></li>
+        <!-- <li><a href="share.html">Kirim</a></li> -->
       </ul>
     </div>
   </nav>
@@ -86,30 +99,48 @@
         </div>
         <a href="#user"><img class="circle left" src="img/profile_photo.png"></a>
         <a href="#name"><span class="white-text name">Christopher A. Tjitrabudi</span></a>
-        <a href="mailto:christopher.at99@gmail.com"><span class="blue-text email">christopher.at99@gmail.com</span></a>
+        <a href="#email"><span class="white-text email">christopher.at99@gmail.com</span></a>
+        <!-- <a href="#email"><span class="white-text email">christopher.at99@gmail.com</span></a> -->
+        <!-- <a href="mailto:christopher.at99@gmail.com"><span class="blue-text email">christopher.at99@gmail.com</span></a> -->
       </div>
     </li>
+
     <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+
     <li><a href="#!">Second Link</a></li>
+
     <li>
       <div class="divider"></div>
     </li>
+
     <li><a class="subheader">Setting</a></li>
-    <div class="switch">
-      Efek salju
-      <label>
-        Off
-        <input type="checkbox">
-        <span class="lever"></span>
-        On
-      </label>
-    </div>
-    <form action="#">
-      <p class="range-field">
-        Kuantitas Salju
-        <input type="range" id="test5" min="0" max="100" />
-      </p>
-    </form>
+
+
+
+    <li>
+      <div class="switch">
+        Efek salju
+        <label>
+          Off
+          <input type="checkbox">
+          <span class="lever"></span>
+          On
+        </label>
+      </div>
+    </li>
+
+    <li>
+      <div class="switch">
+        Musik
+        <label>
+          Off
+          <input type="checkbox">
+          <span class="lever"></span>
+          On
+        </label>
+      </div>
+    </li>
+
     <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
   </ul>
   <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
@@ -155,7 +186,7 @@
     </div>
   </div>
 
-  <div class="divider"></div>
+  <!-- <div class="divider"></div> -->
   <div class="container">
     <div class="card-panel deep-orange lighten-4 col s12 m10 offset-m2">
       <!-- <div class="card-panel teal lighten-2">Kirim ucapan selamat natal kepada teman/keluarga</div> -->
@@ -191,17 +222,18 @@
   <!-- <script src="/js/snowflake-radum.js"></script> -->
   <!-- <script src="/js/clockdiv.js"></script> -->
   <script>
-    //initialize all of the Materialize Components
+    // Initialize all of the Materialize Components
     M.AutoInit();
-    //Untuk sidenav
+
+    // Untuk sidenav
     document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.sidenav');
       var instances = M.Sidenav.init(elems);
     });
     var collapsibleElem = document.querySelector('.collapsible');
     var collapsibleInstance = M.Collapsible.init(collapsibleElem);
-    //Kirim pesan whatsapp
-    // object.addEventListener("click", kirimWA());
+
+    // Kirim pesan whatsapp
     function kirimWA() {
       var Pengirim = document.getElementById("Pengirim").value;
       var Pesan = document.getElementById("Pesan").value;
@@ -214,7 +246,8 @@
         window.location.href = linkWA;
       }
     }
-    //Ambil nama dari URL
+
+    // Ambil nama dari URL
     function getUrlVars() {
       var vars = [], hash;
       var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
@@ -226,9 +259,9 @@
       return vars;
     }
 
+    // Tampilkan nama user
     vars = getUrlVars();
-    //Cek hasil
-    //console.log(vars);
+    // console.log(vars); // Cek hasil
     if (vars["nama"] != null) {
       document.getElementById("masukan-nama").innerHTML = decodeURI(vars["nama"] + "<br>mengucapkan<br>");
     }
