@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta name="dicoding:email" content="christopher.at99@gmail.com">
   <meta charset="UTF-8" />
@@ -67,12 +68,12 @@
         <!-- <i class="material-icons">settings</i> -->
         LOGO
       </a>
-      <ul id="nav-mobile"  class="right hide-on-med-and-down">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
         <!-- <li>
             <a href="#settings" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">settings</i></a>
         </li> -->
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="share.html">Kirim</a></li>
+        <!-- <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="share.html">Kirim</a></li> -->
       </ul>
     </div>
   </nav>
@@ -93,7 +94,22 @@
     <li>
       <div class="divider"></div>
     </li>
-    <li><a class="subheader">Subheader</a></li>
+    <li><a class="subheader">Setting</a></li>
+    <div class="switch">
+      Efek salju
+      <label>
+        Off
+        <input type="checkbox">
+        <span class="lever"></span>
+        On
+      </label>
+    </div>
+    <form action="#">
+      <p class="range-field">
+        Kuantitas Salju
+        <input type="range" id="test5" min="0" max="100" />
+      </p>
+    </form>
     <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
   </ul>
   <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
@@ -134,16 +150,38 @@
         </div>
       </div>
       <div class="col s12 m10 offset-m1">
-        <cdh class="header">Menuju Natal(25 Desember 2019)</cdh>
+        <cdh class="header">Menuju Natal 2019</cdh>
       </div>
     </div>
   </div>
 
-  <!-- <div class="divider"></div>
+  <div class="divider"></div>
+  <div class="container">
+    <div class="card-panel deep-orange lighten-4 col s12 m10 offset-m2">
+      <!-- <div class="card-panel teal lighten-2">Kirim ucapan selamat natal kepada teman/keluarga</div> -->
+      <p>
+        Kirim ucapan selamat natal kepada teman/keluarga<br>
+      </p>
+      <form class="col s10 m8">
+        <div class="input-field col s6 m6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="Pengirim" type="text" class="validate">
+          <label for="Pengirim">Nama pengirim</label>
+        </div>
+        <div class="input-field col s6 m6">
+          <i class="material-icons prefix">mode_edit</i>
+          <input id="Pesan" type="text" class="validate" value="Selamat Natal 2019. Cek link ini: ">
+          <label for="Pesan">Pesan/ucapan (Opsional)</label>
+        </div>
+      </form>
+      <button class="btn waves-effect waves-light" type="submit" name="action" onclick="kirimWA();">
+        Kirim via WhatsApp
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+    </div?>
+  </div>
 
-  <p>
-    Kirim ucapan selamat natal kepada teman/keluarga
-  </p> -->
 
   <script src="/js/materialize.js"></script>
   <script src="/js/ChristmasCountdown.js"></script>
@@ -153,6 +191,8 @@
   <!-- <script src="/js/snowflake-radum.js"></script> -->
   <!-- <script src="/js/clockdiv.js"></script> -->
   <script>
+    //initialize all of the Materialize Components
+    M.AutoInit();
     //Untuk sidenav
     document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.sidenav');
@@ -160,7 +200,20 @@
     });
     var collapsibleElem = document.querySelector('.collapsible');
     var collapsibleInstance = M.Collapsible.init(collapsibleElem);
-
+    //Kirim pesan whatsapp
+    // object.addEventListener("click", kirimWA());
+    function kirimWA() {
+      var Pengirim = document.getElementById("Pengirim").value;
+      var Pesan = document.getElementById("Pesan").value;
+      if (Pengirim == '') {
+        alert('Mohon ini nama pengirim')
+      }
+      else {
+        var linkWeb = 'https://selamatnatal.000webhostapp.com/?nama=' + encodeURI(Pengirim);
+        var linkWA = 'https://wa.me/?text=' + encodeURI(Pesan) + '%0A' + linkWeb;
+        window.location.href = linkWA;
+      }
+    }
     //Ambil nama dari URL
     function getUrlVars() {
       var vars = [], hash;
