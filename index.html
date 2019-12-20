@@ -5,7 +5,9 @@
   <meta name="dicoding:email" content="christopher.at99@gmail.com">
   <meta charset="UTF-8" />
   <title>Selamat Natal 2019</title>
-  <meta name="description" content="Selamat Natal 2019" />
+  <meta name="description" content="Sebentar lagi kita akan merayakan Natal. Aplikasi web ini menyediakan 
+    hitung mundur menuju hari Natal dan beberapa artikel. Website ini memiliki animasi 
+    dan musik. Dibuat secara progresiv dengan menggunakan materialize css." />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Icons and Font -->
@@ -14,8 +16,9 @@
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mountains+of+Christmas" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/materialize.css">
+  <link rel="stylesheet" href="css/materialize.min.css">
   <link rel="stylesheet" href="css/clockdiv.css">
+  <link rel="stylesheet" href="css/neon.css">
   <!-- <link rel="stylesheet" href="css/xmas-tree.css"> -->
   <!-- <link rel="stylesheet" href="css/snow-dzendzen.css"> -->
   <!-- <link rel="stylesheet" href="css/snow.css"> -->
@@ -53,7 +56,6 @@
       font-variant: normal;
       font-weight: 700;
       line-height: 26.4px;
-
     }
 
     #masukan-nama {
@@ -79,34 +81,36 @@
     <source src="bgm/jingle-bells.mp3">
   </audio>
 
+  <!-- Navigator bar -->
   <nav>
     <div class="nav-wrapper">
-      <!-- <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large brand-logo center"><i class="material-icons">menu</i></a> -->
       <a href="#home" class="brand-logo">
         Selamat Natal
       </a>
       <ul id="nav-mobile" class="show-on-med-and-down">
         <li><a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i
               class="material-icons">menu</i></a></li>
-        <!-- <li class="active"><a>Selamat Natal 2019</a></li> -->
       </ul>
     </div>
   </nav>
 
+  <!-- Side navigator -->
   <ul id="slide-out" class="sidenav">
     <li>
       <div class="user-view">
         <div class="background">
           <img src="img/background-1.jpg">
         </div>
-        <a href="#user"><img class="circle left" src="img/santa150.png"></a>
-        <a href="#name"><span class="white-text name">Santa Claus</span></a>
-        <a href="#email"><span class="white-text email">santa@gmail.com</span></a>
+        <a href="#user"><img class="circle" src="img/profile_photo.png"></a>
+        <!-- <a href="#name"><span class="white-text name">Santa Claus</span></a> -->
+        <!-- <a href="#email"><span class="white-text email">santa@gmail.com</span></a> -->
+        <a href="#name"><span class="white-text name">Christopher A. Tjitrabudi</span></a>
         <!-- <a href="#email"><span class="white-text email">christopher.at99@gmail.com</span></a> -->
-        <!-- <a href="mailto:christopher.at99@gmail.com"><span class="blue-text email">christopher.at99@gmail.com</span></a> -->
+        <a href="mailto:christopher.at99@gmail.com" target=" _blank">
+          <span class="blue-text email">christopher.at99@gmail.com</span></a>
       </div>
     </li>
-    <li><a class="subheader">Blog Natal</a></li>
+    <li><a class="subheader">Blog</a></li>
     <li><a href="#RekomendasiFilm" class="waves-effect sidenav-close"><i class="material-icons">movie</i>Rekomendasi
         Film</a></li>
     <li><a href="#RekomendasiKado" class="waves-effect sidenav-close"><i
@@ -124,10 +128,10 @@
         <div class="switch">
           Efek salju
           <label>
-            Off
+            <!-- Off -->
             <input id="switch-salju" type="checkbox" checked>
             <span class="lever"></span>
-            On
+            <!-- On -->
           </label>
         </div>
       </a></li>
@@ -136,10 +140,10 @@
         <div class="switch">
           Musik
           <label>
-            Off
+            <!-- Off -->
             <input id="switch-musik" type="checkbox" checked>
             <span class="lever"></span>
-            On
+            <!-- On -->
           </label>
         </div>
       </a></li>
@@ -158,7 +162,8 @@
       <div class="divider"></div>
     </li>
     <li><a href="#Tentang" class="waves-effect sidenav-close">Tentang</a></li>
-    <li><a href="https://github.com/" class="waves-effect sidenav-close"><i class="material-icons">code</i>Source Code
+    <li><a href="https://github.com/ChristopherAT99/ChristopherAT99.github.io" target=" _blank"
+        class="waves-effect sidenav-close"><i class="material-icons">code</i>Source Code
         (github)</a></li>
   </ul>
   <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
@@ -166,9 +171,17 @@
 
   <div class="container" id="body-content"></div>
   <div class="container" id="body-home">
+
+    <!-- <div class="neon">
+      <span class="text" data-text="thanks">thanks</span>
+      <span class="gradient"></span>
+      <span class="spotlight"></span>
+    </div> -->
+
     <div class="row center">
       <div class="col s12 m10 offset-m1">
         <div class="card-panel deep-orange lighten-4 col s12 m6 offset-m3">
+          
           <h3 id="masukan-nama" class="flow-text"></h3>
           <h1 id="font-xmas" class="flow-text">
             SELAMAT NATAL 2019
@@ -177,7 +190,10 @@
 
       </div>
     </div>
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/25839/tree.svg" width="200px">
+
+    <!-- <img src="img/cute-pixel-christmas-tree-animated-gif.gif"> -->
+    <img src="img/pixel-christmas-tree-bows-blinking-lights-animation.gif">
+    <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/25839/tree.svg" width="200px"> -->
 
 
     <div class="row center" id="countdown">
@@ -234,10 +250,10 @@
   </div>
 
   <!-- Load js at the end of html body -->
-  <script src="/js/materialize.js"></script>
-  <script src="/js/snow-kurisubrooks.js"></script>
-  <script src="/js/ChristmasCountdown.js"></script>
+  <script src="/js/materialize.min.js"></script>
+  <script src="/js/snow.js"></script>
   <script src="/js/navigasi.js"></script>
+  <script src="/js/ChristmasCountdown.js"></script>
 
   <script>
     // Initialize all of the Materialize Components
@@ -250,6 +266,12 @@
     });
     var collapsibleElem = document.querySelector('.collapsible');
     var collapsibleInstance = M.Collapsible.init(collapsibleElem);
+    
+    // Listener Material Box
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elems);
+    });
 
     // Kirim pesan via whatsapp
     function kirimWA() {
@@ -260,7 +282,7 @@
         alert('Mohon isi nama pengirim')
       }
       else {
-        var linkWeb = 'https://selamatnatal.000webhostapp.com/?nama=' + encodeURI(Pengirim);
+        var linkWeb = 'https://github.com/ChristopherAT99/ChristopherAT99.github.io/?nama=' + encodeURI(Pengirim);
         var linkWA = 'https://wa.me/?text=' + encodeURI(Pesan) + '%0A' + linkWeb;
         window.location.href = linkWA;
       }
@@ -305,10 +327,11 @@
         var cek = document.getElementById("switch-salju").checked;
         if (cek) {
           console.log("Salju aktif");
-
+          snowMax = 200;
         }
         else {
           console.log("Salju mati");
+          snowMax = 0;
         }
       });
     });

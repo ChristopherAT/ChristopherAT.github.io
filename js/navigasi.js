@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Load page content
+  // Load page content berdasarkan hash
   var page = window.location.hash.substr(1);
   if (page == "" || page == "home") {
     page = "home";
@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loadPage(page);
   }
 
+  // Buka halaman di folder pages dengan menggunakan AJAX
   function loadPage(page) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     xhttp.send();
   }
 
+  // Listener sidenav, buka halaman ketika menu di sidenav diklik
   document.querySelectorAll(".sidenav a, .topnav a, .brand-logo").forEach(function (elm) {
     elm.addEventListener("click", function (event) {
       // Tutup sidenav
