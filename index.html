@@ -36,8 +36,9 @@
       height: 100%;
       width: 100%;
       background-color: #F5624D;
-      background-image: url("img/background-2.jpg");
-      background-size: cover;
+      background-image: url("img/1028.png");
+      background-repeat: repeat;
+      /* background-size: cover; */
     }
 
     body {
@@ -68,26 +69,20 @@
 
 <body>
   <!-- Musik -->
-  <!-- <embed src="bgm/jingle-bells-keyboard.mid" autostart="true"> -->
-  <audio autoplay loop>
+  <!-- <audio autoplay loop id="musik">
     <source src="bgm/jingle-bells.mp3">
-  </audio>
+  </audio> -->
 
 
   <nav>
     <div class="nav-wrapper">
-      <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
-      <!-- <a href="#!" data-target="slide-out" class="brand-logo"> -->
-      <!-- <i class="material-icons">settings</i> -->
-      <!-- LOGO -->
-      <!-- </a> -->
-      <ul id="nav-mobile" class="left show-on-med-and-down">
-        <!-- <li>
-            <a href="#settings" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">settings</i></a>
-        </li> -->
-        <li class="active"><a>Selamat Natal 2019</a></li>
-        <!-- <li class="active"><a href="index.html">Selamat Natal 2019</a></li> -->
-        <!-- <li><a href="share.html">Kirim</a></li> -->
+      <!-- <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large brand-logo center"><i class="material-icons">menu</i></a> -->
+      <a href="#home" class="brand-logo">
+        Selamat Natal
+      </a>
+      <ul id="nav-mobile" class="show-on-med-and-down">
+        <li><a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a></li>
+        <!-- <li class="active"><a>Selamat Natal 2019</a></li> -->
       </ul>
     </div>
   </nav>
@@ -98,65 +93,66 @@
         <div class="background">
           <img src="img/background-1.jpg">
         </div>
-        <a href="#user"><img class="circle left" src="img/profile_photo.png"></a>
-        <a href="#name"><span class="white-text name">Christopher A. Tjitrabudi</span></a>
-        <a href="#email"><span class="white-text email">christopher.at99@gmail.com</span></a>
+        <a href="#user"><img class="circle left" src="img/santa150.png"></a>
+        <a href="#name"><span class="white-text name">Santa Claus</span></a>
+        <a href="#email"><span class="white-text email">santa@gmail.com</span></a>
         <!-- <a href="#email"><span class="white-text email">christopher.at99@gmail.com</span></a> -->
         <!-- <a href="mailto:christopher.at99@gmail.com"><span class="blue-text email">christopher.at99@gmail.com</span></a> -->
       </div>
     </li>
-
-    <!-- <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li> -->
-    <!-- <li><a href="#!">Second Link</a></li> -->
-    <!-- <li><div class="divider"></div></li> -->
-
+    <li><a class="subheader">Blog Natal</a></li>
+    <li><a href="#RekomendasiFilm" class="waves-effect sidenav-close"><i class="material-icons">movie</i>Rekomendasi Film</a></li>
+    <li><a href="#RekomendasiKado" class="waves-effect sidenav-close"><i class="material-icons">shopping_cart</i>Rekomendasi Kado</a></li>
+    <li><a href="#RekomendasiWisata" class="waves-effect sidenav-close"><i class="material-icons">airplanemode_active</i>Rekomendasi Wisata</a></li>
+    
+    <li><div class="divider"></div></li>
     <li><a class="subheader">Pengaturan (belum jadi)</a></li>
+
     <li><a href="#!">Bahasa</a></li>
-    
-      <form action="#">
-        <label>
-          <input name="group1" class="with-gap" type="radio" checked />
-          <span>Indonesia</span>
-        </label>
-        <label>
-          <input name="group1" class="with-gap" type="radio" />
-          <span>English</span>
-        </label>
-      </form>
-    
-
+    <form action="#">
+      <label>
+        <input name="group1" class="with-gap" type="radio" checked />
+        <span>Indonesia</span>
+      </label>
+      <label>
+        <input name="group1" class="with-gap" type="radio" disabled/>
+        <span>English</span>
+      </label>
+    </form>
+    <!-- Switch Salju -->
     <li><a>
-      <div class="switch">
-        Efek salju
-        <label>
-          Off
-          <input type="checkbox">
-          <span class="lever" ></span>
-          On
-        </label>
-      </div>
-    </a></li>
-
+        <div class="switch">
+          Efek salju
+          <label>
+            Off
+            <input type="checkbox">
+            <span class="lever"></span>
+            On
+          </label>
+        </div>
+      </a></li>
+    <!-- Switch Musik -->
     <li><a>
-      <div class="switch">
-        Musik
-        <label>
-          Off
-          <input type="checkbox">
-          <span class="lever"></span>
-          On
-        </label>
-      </div>
-    </a></li>
+        <div class="switch">
+          Musik
+          <label>
+            Off
+            <input type="checkbox">
+            <span class="lever"></span>
+            On
+          </label>
+        </div>
+      </a></li>
 
     <li><div class="divider"></div></li>
-
-    <li><a class="waves-effect" href="#!">Tentang</a></li>
-    <li><a class="waves-effect" href="#!">Source Code</a></li>
+    <li><a href="#!" class="waves-effect sidenav-close">Tentang</a></li>
+    <li><a href="https://github.com/" class="waves-effect sidenav-close"><i class="material-icons">code</i>Source Code (github)</a></li>
   </ul>
   <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
 
-  <div class="container">
+
+  <div class="container" id="body-content"></div>
+  <div class="container" id="body-home">
     <div class="row center">
       <div class="col s12 m10 offset-m1">
         <h3 id="masukan-nama"></h3>
@@ -166,11 +162,9 @@
       </div>
     </div>
     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/25839/tree.svg" width="200px">
-  </div>
-
-
-  <div class="container" id="countdown">
-    <div class="row center">
+  
+  
+    <div class="row center" id="countdown">
       <div class="col s12 m8 offset-m2">
         <div id="clockdiv">
           <div>
@@ -195,24 +189,24 @@
         <cdh class="header">Menuju Natal 2019</cdh>
       </div>
     </div>
-  </div>
-
-  <!-- <div class="divider"></div> -->
-  <div class="container">
-    <div class="card-panel deep-orange lighten-4 col s12 m10 offset-m2">
+  
+  
+    <!-- <div class="divider"></div> -->
+  
+    <div class="card-panel deep-orange lighten-4 col s12 m8 offset-m2">
       <!-- <div class="card-panel teal lighten-2">Kirim ucapan selamat natal kepada teman/keluarga</div> -->
       <p>
         Kirim ucapan selamat natal kepada teman/keluarga<br>
       </p>
-      <form class="col s10 m8">
-        <div class="input-field col s6 m6">
+      <form class="col s10 m6">
+        <div class="input-field col s6 m4">
           <i class="material-icons prefix">account_circle</i>
           <input id="Pengirim" type="text" class="validate">
           <label for="Pengirim">Nama pengirim</label>
         </div>
-        <div class="input-field col s6 m6">
+        <div class="input-field col s6 m4">
           <i class="material-icons prefix">mode_edit</i>
-          <input id="Pesan" type="text" class="validate" value="Selamat Natal 2019. Cek link ini: ">
+          <input id="Pesan" type="text" class="validate" value="Selamat Natal 2019">
           <label for="Pesan">Pesan/ucapan (Opsional)</label>
         </div>
       </form>
@@ -224,14 +218,11 @@
     </div?>
   </div>
 
-
+  <!-- Load js at the end of html body -->
   <script src="/js/materialize.js"></script>
-  <script src="/js/ChristmasCountdown.js"></script>
   <script src="/js/snow-kurisubrooks.js"></script>
-  <!-- <script src="/js/snow-zachstronaut.js"></script> -->
-  <!-- <script src="/js/snow-zagrav.js"></script> -->
-  <!-- <script src="/js/snowflake-radum.js"></script> -->
-  <!-- <script src="/js/clockdiv.js"></script> -->
+  <script src="js/ChristmasCountdown.js"></script>
+  <script src="/js/navigasi.js"></script>
   <script>
     // Initialize all of the Materialize Components
     M.AutoInit();
@@ -249,7 +240,7 @@
       var Pengirim = document.getElementById("Pengirim").value;
       var Pesan = document.getElementById("Pesan").value;
       if (Pengirim == '') {
-        alert('Mohon ini nama pengirim')
+        alert('Mohon isi nama pengirim')
       }
       else {
         var linkWeb = 'https://selamatnatal.000webhostapp.com/?nama=' + encodeURI(Pengirim);
@@ -278,5 +269,4 @@
     }
   </script>
 </body>
-
 </html>
