@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".sidenav a, .topnav a, .brand-logo").forEach(function (elm) {
     elm.addEventListener("click", function (event) {
       // Tutup sidenav
-      var sidenav = document.querySelector(".sidenav");
-      M.Sidenav.getInstance(sidenav).close();
+      // var sidenav = document.querySelector(".sidenav");
+      // M.Sidenav.getInstance(sidenav).close();
 
       // Muat konten halaman yang dipanggil
       page = event.target.getAttribute("href").substr(1);

@@ -87,7 +87,6 @@ function moveSnow() {
 			snow[i].posY = 0;
 		}
 	}
-
 	setTimeout("moveSnow()", snowRefresh);
 }
 

@@ -53,6 +53,7 @@
       font-variant: normal;
       font-weight: 700;
       line-height: 26.4px;
+
     }
 
     #masukan-nama {
@@ -64,15 +65,19 @@
       font-weight: 700;
       line-height: 26.4px;
     }
+
+    .switch label .lever {
+      top: 16px;
+      float: right;
+    }
   </style>
 </head>
 
 <body>
   <!-- Musik -->
-  <!-- <audio autoplay loop id="musik">
+  <audio autoplay loop id="musik">
     <source src="bgm/jingle-bells.mp3">
-  </audio> -->
-
+  </audio>
 
   <nav>
     <div class="nav-wrapper">
@@ -81,7 +86,8 @@
         Selamat Natal
       </a>
       <ul id="nav-mobile" class="show-on-med-and-down">
-        <li><a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a></li>
+        <li><a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i
+              class="material-icons">menu</i></a></li>
         <!-- <li class="active"><a>Selamat Natal 2019</a></li> -->
       </ul>
     </div>
@@ -101,31 +107,25 @@
       </div>
     </li>
     <li><a class="subheader">Blog Natal</a></li>
-    <li><a href="#RekomendasiFilm" class="waves-effect sidenav-close"><i class="material-icons">movie</i>Rekomendasi Film</a></li>
-    <li><a href="#RekomendasiKado" class="waves-effect sidenav-close"><i class="material-icons">shopping_cart</i>Rekomendasi Kado</a></li>
-    <li><a href="#RekomendasiWisata" class="waves-effect sidenav-close"><i class="material-icons">airplanemode_active</i>Rekomendasi Wisata</a></li>
-    
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Pengaturan (belum jadi)</a></li>
+    <li><a href="#RekomendasiFilm" class="waves-effect sidenav-close"><i class="material-icons">movie</i>Rekomendasi
+        Film</a></li>
+    <li><a href="#RekomendasiKado" class="waves-effect sidenav-close"><i
+          class="material-icons">shopping_cart</i>Rekomendasi Kado</a></li>
+    <li><a href="#RekomendasiWisata" class="waves-effect sidenav-close"><i
+          class="material-icons">airplanemode_active</i>Rekomendasi Wisata</a></li>
 
-    <li><a href="#!">Bahasa</a></li>
-    <form action="#">
-      <label>
-        <input name="group1" class="with-gap" type="radio" checked />
-        <span>Indonesia</span>
-      </label>
-      <label>
-        <input name="group1" class="with-gap" type="radio" disabled/>
-        <span>English</span>
-      </label>
-    </form>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a class="subheader">Pengaturan</a></li>
+
     <!-- Switch Salju -->
     <li><a>
         <div class="switch">
           Efek salju
           <label>
             Off
-            <input type="checkbox">
+            <input id="switch-salju" type="checkbox" checked>
             <span class="lever"></span>
             On
           </label>
@@ -137,16 +137,29 @@
           Musik
           <label>
             Off
-            <input type="checkbox">
+            <input id="switch-musik" type="checkbox" checked>
             <span class="lever"></span>
             On
           </label>
         </div>
       </a></li>
-
-    <li><div class="divider"></div></li>
-    <li><a href="#!" class="waves-effect sidenav-close">Tentang</a></li>
-    <li><a href="https://github.com/" class="waves-effect sidenav-close"><i class="material-icons">code</i>Source Code (github)</a></li>
+    <li><a>Bahasa</a></li>
+    <form action="#">
+      <label>
+        <input name="group1" class="with-gap" type="radio" checked />
+        <span>Indonesia</span>
+      </label>
+      <label>
+        <input name="group1" class="with-gap" type="radio" disabled />
+        <span>English</span>
+      </label>
+    </form>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a href="#Tentang" class="waves-effect sidenav-close">Tentang</a></li>
+    <li><a href="https://github.com/" class="waves-effect sidenav-close"><i class="material-icons">code</i>Source Code
+        (github)</a></li>
   </ul>
   <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
 
@@ -155,15 +168,18 @@
   <div class="container" id="body-home">
     <div class="row center">
       <div class="col s12 m10 offset-m1">
-        <h3 id="masukan-nama"></h3>
-        <h1 id="font-xmas">
-          SELAMAT NATAL 2019
-        </h1>
+        <div class="card-panel deep-orange lighten-4 col s12 m6 offset-m3">
+          <h3 id="masukan-nama" class="flow-text"></h3>
+          <h1 id="font-xmas" class="flow-text">
+            SELAMAT NATAL 2019
+          </h1>
+        </div>
+
       </div>
     </div>
     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/25839/tree.svg" width="200px">
-  
-  
+
+
     <div class="row center" id="countdown">
       <div class="col s12 m8 offset-m2">
         <div id="clockdiv">
@@ -186,16 +202,15 @@
         </div>
       </div>
       <div class="col s12 m10 offset-m1">
-        <cdh class="header">Menuju Natal 2019</cdh>
+        <cdh id="teks-countdown" class="header">Menuju Natal 2019</cdh>
       </div>
     </div>
-  
-  
+
+
     <!-- <div class="divider"></div> -->
-  
-    <div class="card-panel deep-orange lighten-4 col s12 m8 offset-m2">
-      <!-- <div class="card-panel teal lighten-2">Kirim ucapan selamat natal kepada teman/keluarga</div> -->
-      <p>
+
+    <div class="card-panel deep-orange lighten-4 col s12 m6 offset-m3">
+      <p class="flow-text">
         Kirim ucapan selamat natal kepada teman/keluarga<br>
       </p>
       <form class="col s10 m6">
@@ -221,8 +236,9 @@
   <!-- Load js at the end of html body -->
   <script src="/js/materialize.js"></script>
   <script src="/js/snow-kurisubrooks.js"></script>
-  <script src="js/ChristmasCountdown.js"></script>
+  <script src="/js/ChristmasCountdown.js"></script>
   <script src="/js/navigasi.js"></script>
+
   <script>
     // Initialize all of the Materialize Components
     M.AutoInit();
@@ -235,10 +251,11 @@
     var collapsibleElem = document.querySelector('.collapsible');
     var collapsibleInstance = M.Collapsible.init(collapsibleElem);
 
-    // Kirim pesan whatsapp
+    // Kirim pesan via whatsapp
     function kirimWA() {
       var Pengirim = document.getElementById("Pengirim").value;
       var Pesan = document.getElementById("Pesan").value;
+      Pengirim = Pengirim.replace(" ", "_");
       if (Pengirim == '') {
         alert('Mohon isi nama pengirim')
       }
@@ -249,24 +266,68 @@
       }
     }
 
-    // Ambil nama dari URL
+    // Ambil nama pengirim dari URL
     function getUrlVars() {
       var vars = [], hash;
-      var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-      for (var i = 0; i < hashes.length; i++) {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-      }
+      var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('#');
+
+      hash = hashes[0].split('=');
+      vars.push(hash[0]);
+      vars[hash[0]] = hash[1];
+
       return vars;
     }
 
-    // Tampilkan nama user
+    // Tampilkan nama pengirim di halaman utama
     vars = getUrlVars();
-    // console.log(vars); // Cek hasil
     if (vars["nama"] != null) {
-      document.getElementById("masukan-nama").innerHTML = decodeURI(vars["nama"] + "<br>mengucapkan<br>");
+      var Pengirim = vars["nama"];
+      Pengirim = Pengirim.replace("_", " ");
+      document.getElementById("masukan-nama").innerHTML = decodeURI(Pengirim + " mengucapkan");
     }
+
+    // Cek kalender, ganti teks id="teks-countdown" jika countdown sudah selesai
+    var now = new Date();
+    var currentMonth = (now.getMonth() + 1);
+    var currentDay = now.getDate();
+    if (currentMonth == 12 && currentDay >= 25) {
+      if (currentDay == 25) document.getElementById("teks-countdown").innerHTML = "Selamat hari Natal";
+      else document.getElementById("teks-countdown").innerHTML = "Hari Natal sudah lewat<br>Hitung mundur menuju Natal 2020";
+    }
+
+    // Switch salju dan musik
+    // Tes switch
+    // console.log(document.getElementById("switch-salju").checked)
+    // console.log(document.getElementById("switch-musik").checked)
+
+    document.querySelectorAll("#switch-salju").forEach(function (elm) {
+      elm.addEventListener("click", function (event) {
+        var cek = document.getElementById("switch-salju").checked;
+        if (cek) {
+          console.log("Salju aktif");
+
+        }
+        else {
+          console.log("Salju mati");
+        }
+      });
+    });
+
+    document.querySelectorAll("#switch-musik").forEach(function (elm) {
+      elm.addEventListener("click", function (event) {
+        var cek = document.getElementById("switch-musik").checked;
+        var musikk = document.getElementById("musik");
+        if (cek) {
+          console.log("Musik aktif");
+          musikk.muted = false;
+        }
+        else {
+          console.log("Musik mati");
+          musikk.muted = true;
+        }
+      });
+    });
   </script>
 </body>
+
 </html>
