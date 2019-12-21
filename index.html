@@ -18,7 +18,8 @@
   <!-- CSS -->
   <link rel="stylesheet" href="css/materialize.min.css">
   <link rel="stylesheet" href="css/clockdiv.css">
-  <link rel="stylesheet" href="css/neon.css">
+  <!-- <link rel="stylesheet" href="css/neon.css"> -->
+  <!-- <link rel="stylesheet" href="css/TextBlink.css"> -->
   <!-- <link rel="stylesheet" href="css/xmas-tree.css"> -->
   <!-- <link rel="stylesheet" href="css/snow-dzendzen.css"> -->
   <!-- <link rel="stylesheet" href="css/snow.css"> -->
@@ -56,6 +57,7 @@
       font-variant: normal;
       font-weight: 700;
       line-height: 26.4px;
+      margin-top: 0.2em;
     }
 
     #masukan-nama {
@@ -68,9 +70,28 @@
       line-height: 26.4px;
     }
 
+    .white-glow-text {
+      text-align: center;
+      font-size: 6.5em;
+      color: #fff;
+      letter-spacing: 0px;
+      font-weight: 700;
+      text-transform: uppercase;
+      animation: blur .75s ease-out infinite;
+      text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
+    }
+
     .switch label .lever {
       top: 16px;
       float: right;
+    }
+
+    .iris {
+      background-image: url("/img/merry-christmas-card-template - Copy.jpg");
+      background-repeat: no-repeat;
+      height: 100vh;
+      /* width: 100%; */
+      background-size: cover;
     }
   </style>
 </head>
@@ -171,22 +192,16 @@
 
   <div class="container" id="body-content"></div>
   <div class="container" id="body-home">
-
-    <!-- <div class="neon">
-      <span class="text" data-text="thanks">thanks</span>
-      <span class="gradient"></span>
-      <span class="spotlight"></span>
-    </div> -->
-
     <div class="row center">
       <div class="col s12 m10 offset-m1">
-        <div class="card-panel deep-orange lighten-4 col s12 m6 offset-m3">
-          
-          <h3 id="masukan-nama" class="flow-text"></h3>
+        <!-- <div class="card-panel deep-orange lighten-4 col s12 m6 offset-m3"> -->
+        <div class="white-glow-text flow-text">
+          <h2 id="masukan-nama" class="flow-text"></h2>
           <h1 id="font-xmas" class="flow-text">
             SELAMAT NATAL 2019
           </h1>
         </div>
+        <!-- </div> -->
 
       </div>
     </div>
@@ -246,8 +261,32 @@
         <i class="material-icons right">send</i>
       </button>
     </div>
-    </div?>
-  </div>
+
+    <!-- <div class="container">
+      <div class="iris">
+        <div class="card transparent z-depth-5 col s12 m6 offset-m3"></div>
+        <p class="flow-text" style="padding-top: 250px;">
+          Kirim ucapan selamat natal kepada teman/keluarga<br>
+        </p>
+        <form class="col s10 m6">
+          <div class="input-field col s6 m4">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="Pengirim" type="text" class="validate">
+            <label for="Pengirim">Nama pengirim</label>
+          </div>
+          <div class="input-field col s6 m4">
+            <i class="material-icons prefix">mode_edit</i>
+            <input id="Pesan" type="text" class="validate" value="Selamat Natal 2019">
+            <label for="Pesan">Pesan/ucapan (Opsional)</label>
+          </div>
+        </form>
+        <button class="btn waves-effect waves-light" type="submit" name="action" onclick="kirimWA();">
+          Kirim via WhatsApp
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </div>
+  </div> -->
 
   <!-- Load js at the end of html body -->
   <script src="/js/materialize.min.js"></script>
@@ -266,7 +305,7 @@
     });
     var collapsibleElem = document.querySelector('.collapsible');
     var collapsibleInstance = M.Collapsible.init(collapsibleElem);
-    
+
     // Listener Material Box
     document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.materialboxed');
